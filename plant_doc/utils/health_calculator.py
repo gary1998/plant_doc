@@ -1,7 +1,7 @@
 from plantcv import plantcv as pcv
 import json
 import logging
-from utils import color_reporter
+from plant_doc.utils import color_reporter
 
 logging.basicConfig(level=logging.NOTSET)
 logger = logging.getLogger("health_calculator")

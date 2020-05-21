@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify
-from plant_doctor import plant_doctor
+from plant_doc.plant_doctor import plant_doctor
 import os
 
 app = Flask(__name__)

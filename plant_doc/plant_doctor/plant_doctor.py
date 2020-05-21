@@ -1,8 +1,8 @@
 import cv2
 import numpy as np
 from plantcv import plantcv as pcv
-from utils import health_calculator, leaf_image, image_downloader, cache_remover
-from disease_diagnosers import leaf_spots
+from plant_doc.utils import health_calculator, leaf_image, image_downloader, cache_remover
+from plant_doc.disease_diagnosers import leaf_spots
 
 
 def generate_report(url):
