@@ -3,7 +3,7 @@ from plant_doc.plant_doctor import plant_doctor
 import os
 
 app = Flask(__name__)
-port = int(os.environ.get("PORT", default=33507))
+port = int(os.environ.get("PORT", 5000))
 
 @app.route("/")
 def home():
@@ -16,4 +16,4 @@ def analyze():
     return jsonify(report=report)
     
 if __name__ == "__main__":
-    app.run(debug=True, port=port)
+    app.run(host='0.0.0.0', debug=True, port=port)
