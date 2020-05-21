@@ -1,1 +1,1 @@
-web: sudo pip install opencv-python && sudo apt update && apt install -y libsm6 libxext6python && plant_doc/server.py
+web: plant_doc/server.py
