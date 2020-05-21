@@ -37,7 +37,7 @@ def diagnose(rbg_img, mask):
 def count_yellow_spots(img):
     masked_img = cv2.inRange(img, np.array([21, 100, 100]), np.array([32, 255, 255]))
     edges = pcv.canny_edge_detect(img=masked_img, sigma=0.1)
-    _, contours, hierarchy = cv2.findContours(edges, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE)
+    contours, hierarchy = cv2.findContours(edges, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE)
     contours = sorted(contours, key=cv2.contourArea, reverse=True)
     spots = []
     for contour in contours:
@@ -50,7 +50,7 @@ def count_yellow_spots(img):
 def count_white_spots(img):
     masked_img = cv2.inRange(img, np.array([0, 10, 153]), np.array([180, 25, 255]))
     edges = pcv.canny_edge_detect(img=masked_img, sigma=0.1)
-    _, contours, hierarchy = cv2.findContours(edges, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE)
+    contours, hierarchy = cv2.findContours(edges, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE)
     contours = sorted(contours, key=cv2.contourArea, reverse=True)
     spots = []
     for contour in contours:
@@ -63,7 +63,7 @@ def count_white_spots(img):
 def count_orange_spots(img):
     masked_img = cv2.inRange(img, np.array([7, 100, 100]), np.array([20, 255, 255]))
     edges = pcv.canny_edge_detect(img=masked_img, sigma=0.1)
-    _, contours, hierarchy = cv2.findContours(edges, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE)
+    contours, hierarchy = cv2.findContours(edges, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE)
     contours = sorted(contours, key=cv2.contourArea, reverse=True)
     spots = []
     for contour in contours:
