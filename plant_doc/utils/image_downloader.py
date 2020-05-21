@@ -10,7 +10,6 @@ def download_and_save(url):
     logger.debug(f"making request to server with url: {url}")
     resp = requests.get(url=url, verify=False)
     logger.debug("response received from server")
-    print(os.listdir())
     file_path = "./plant_doc/test_images/test"+str(url[url.rindex("."): len(url)])
     logger.debug("creating file to write response content")
     with open(file_path, "wb+") as f:
