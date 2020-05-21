@@ -3,7 +3,7 @@ from plant_doctor import plant_doctor
 import os
 
 app = Flask(__name__)
-port = os.environ.get("PORT", default=3000)
+port = int(os.environ.get("PORT", default=33507))
 
 @app.route("/")
 def home():

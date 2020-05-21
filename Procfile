@@ -1,1 +1,1 @@
-web: pip install . && python plant_doc/server.py
+web: python plant_doc/server.py
