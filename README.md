@@ -1,5 +1,14 @@
 ### PlantDoc
 
+Deployed [here](https://plant-doc-plantcv.herokuapp.com/) on Heroku
+
+Endpoints:
+
+* Analyze (GET):
+    * Path Args: url (required - URL of the image to be analyzed)
+
+-----------------------------------------------------------------------
+
 #### Steps to run locally:
 * Clone repository
 ```bash
