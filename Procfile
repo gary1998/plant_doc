@@ -1,0 +1,1 @@
+web: pip install . && python plant_doc/server.py
