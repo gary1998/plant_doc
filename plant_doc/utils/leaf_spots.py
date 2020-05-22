@@ -25,12 +25,12 @@ def diagnose(rbg_img, mask, spot_area):
             "count": yellow_spots_count
         },
         "brown": {
-            "presence": bool(white_spots_count),
-            "count": white_spots_count
+            "presence": bool(brown_spots_count),
+            "count": brown_spots_count
         },
         "red": {
-            "presence": bool(orange_spots_count),
-            "count": orange_spots_count
+            "presence": bool(red_spots_count),
+            "count": red_spots_count
         }
     }
 
