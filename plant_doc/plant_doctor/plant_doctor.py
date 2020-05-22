@@ -3,9 +3,20 @@ import numpy as np
 from plantcv import plantcv as pcv
 from plant_doc.utils import health_calculator, leaf_image, image_downloader, cache_remover, leaf_spots
 from plant_doc.disease_estimator import disease_estimator
+import logging
 
+logging.basicConfig(level=logging.NOTSET)
+logger = logging.getLogger("plant_doctor")
 
 def generate_report(url, size, mask_gray_low, mask_gray_high, health_point, spot_area, spot_count, raw):
+    logger.debug("got path arguments as followed:")
+    logger.debug(f"url = {url}")
+    logger.debug(f"mask_gray_low = {mask_gray_low}")
+    logger.debug(f"mask_gray_high = {mask_gray_high}")
+    logger.debug(f"health_point = {health_point}")
+    logger.debug(f"spot_area = {spot_area}")
+    logger.debug(f"spot_count = {spot_count}")
+    logger.debug(f"raw = {raw}")
     if(url):
         path = image_downloader.download_and_save(url)
         rgb_img = cv2.imread(path)

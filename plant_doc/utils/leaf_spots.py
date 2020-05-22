@@ -13,12 +13,12 @@ def diagnose(rbg_img, mask, spot_area):
     logger.debug("counting yellow spots")
     yellow_spots_count = count_yellow_spots(img, spot_area)
     logger.debug(f"got {yellow_spots_count} yellow spots")
-    logger.debug("counting white spots")
-    white_spots_count = count_white_spots(img, spot_area)
-    logger.debug(f"got {white_spots_count} white spots")
-    logger.debug("counting orange spots")
-    orange_spots_count = count_orange_spots(img, spot_area)
-    logger.debug(f"got {orange_spots_count} orange spots")
+    logger.debug("counting brown spots")
+    brown_spots_count = count_brown_spots(img, spot_area)
+    logger.debug(f"got {brown_spots_count} brown spots")
+    logger.debug("counting red spots")
+    red_spots_count = count_red_spots(img, spot_area)
+    logger.debug(f"got {red_spots_count} red spots")
     return {
         "yellow": {
             "presence": bool(yellow_spots_count),
