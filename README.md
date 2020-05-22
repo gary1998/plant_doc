@@ -10,7 +10,7 @@ Endpoints:
         * size - optional - Size, image to be resized in (default = 240)
         * mask_gray_low - optional - Lowest gray value to be allowed in mask (default = 95)
         * mask_gray_high - optional - Highest gray value to be allowed in mask (default = 255)
-        * health_point - optional - Hue point, to be used as healthy point (default = 120)
+        * health_point - optional - Hue value (0 - 360), to be used as healthy point (default = 120)
         * spot_area - optional - Area of the spot (in pixels, according to size of image) to be counted (default = 50)
         * spot_count - optional - Count of spots to estimate leaf as diseased (default = 100)
         * raw - optional - Whether raw report needs to be attached in response or not (default = False)

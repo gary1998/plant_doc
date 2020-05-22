@@ -46,7 +46,7 @@ def generate_report(url, size, mask_gray_low, mask_gray_high, health_point, spot
             "leaf_texture_analysis_report": leaf_spots_report
         }
 
-        diagnosis = disease_estimator.diagnose(report, raw)
+        diagnosis = disease_estimator.diagnose(report, raw, spot_count)
 
         return diagnosis
 
