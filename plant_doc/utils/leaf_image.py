@@ -2,6 +2,7 @@ import cv2
 from plantcv import plantcv as pcv
 import logging
 import json
+import numpy as np
 
 logging.basicConfig(level=logging.NOTSET)
 logger = logging.getLogger("leaf_image")
