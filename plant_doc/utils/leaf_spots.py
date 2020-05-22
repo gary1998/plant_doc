@@ -24,18 +24,18 @@ def diagnose(rbg_img, mask, spot_area):
             "presence": bool(yellow_spots_count),
             "count": yellow_spots_count
         },
-        "white": {
+        "brown": {
             "presence": bool(white_spots_count),
             "count": white_spots_count
         },
-        "orange": {
+        "red": {
             "presence": bool(orange_spots_count),
             "count": orange_spots_count
         }
     }
 
 def count_yellow_spots(img, spot_area):
-    masked_img = cv2.inRange(img, np.array([21, 100, 100]), np.array([32, 255, 255]))
+    masked_img = cv2.inRange(img, np.array([25, 100, 100]), np.array([35, 255, 255]))
     edges = pcv.canny_edge_detect(img=masked_img, sigma=0.1)
     contours, hierarchy = cv2.findContours(edges, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE)
     contours = sorted(contours, key=cv2.contourArea, reverse=True)
@@ -47,8 +47,8 @@ def count_yellow_spots(img, spot_area):
             spots.append(contour)
     return len(spots)
 
-def count_white_spots(img, spot_area):
-    masked_img = cv2.inRange(img, np.array([0, 10, 153]), np.array([180, 25, 255]))
+def count_brown_spots(img, spot_area):
+    masked_img = cv2.inRange(img, np.array([16, 100, 100]), np.array([24, 255, 255]))
     edges = pcv.canny_edge_detect(img=masked_img, sigma=0.1)
     contours, hierarchy = cv2.findContours(edges, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE)
     contours = sorted(contours, key=cv2.contourArea, reverse=True)
@@ -60,8 +60,8 @@ def count_white_spots(img, spot_area):
             spots.append(contour)
     return len(spots)
 
-def count_orange_spots(img, spot_area):
-    masked_img = cv2.inRange(img, np.array([7, 100, 100]), np.array([20, 255, 255]))
+def count_red_spots(img, spot_area):
+    masked_img = cv2.inRange(img, np.array([175, 100, 100]), np.array([15, 255, 255]))
     edges = pcv.canny_edge_detect(img=masked_img, sigma=0.1)
     contours, hierarchy = cv2.findContours(edges, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE)
     contours = sorted(contours, key=cv2.contourArea, reverse=True)
