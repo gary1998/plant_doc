@@ -36,7 +36,7 @@ def diagnose(report, raw, spot_count):
         "diseases": [],
         "deficiencies": [],
     }
-    
+
     if chlorosis:
         diagnosed_report["diseases"].append({
             "chlorosis": {
@@ -81,7 +81,7 @@ def diagnose(report, raw, spot_count):
         })
     if nitrogen_deficiency:
         diagnosed_report["deficiencies"].append({
-            "phosphorous_deficiency": {
+            "nitrogen_deficiency": {
                 "presence": nitrogen_deficiency,
                 "text": "Use Nitrogen based fertilizer. Fertilizer's amount should be fixed according to field area and yield amount."
             }
