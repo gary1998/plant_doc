@@ -11,13 +11,14 @@ def home():
 
 @app.route("/analyze", methods=["GET"])
 def analyze():
-    url = request.args["url"]
-    size = request.args["size"]
-    mask_gray_low = request.args["mask_gray_low"]
-    mask_gray_high = request.args["mask_gray_high"]
-    health_point = request.args["health_point"]
-    spot_area = request.args["spot_area"]
-    raw = request.args["raw"]
+    args = request.args
+    url = args.get("url", default=None)
+    size = args.get("size", default=240)
+    mask_gray_low = args.get("mask_gray_low", default=95)
+    mask_gray_high = args.get("mask_gray_high", default=255)
+    health_point = args.get("healh_point", default=120)
+    spot_area = args.get("spot_area", default=50)
+    raw = args.get("raw", default=False)
     report = plant_doctor.generate_report(url=url, size=size, mask_gray_low=mask_gray_low, mask_gray_high=mask_gray_high, health_point=health_point, spot_area=spot_area, raw=raw)
     return jsonify(report=report)
     

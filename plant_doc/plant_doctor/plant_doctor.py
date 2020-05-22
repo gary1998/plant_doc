@@ -5,7 +5,7 @@ from plant_doc.utils import health_calculator, leaf_image, image_downloader, cac
 from plant_doc.disease_estimator import disease_estimator
 
 
-def generate_report(url=None, size=240, mask_gray_low=95, mask_gray_high=255, health_point=120, spot_area=50, raw=False):
+def generate_report(url, size, mask_gray_low, mask_gray_high, health_point, spot_area, raw):
     if(url):
         path = image_downloader.download_and_save(url)
         rgb_img = cv2.imread(path)
