@@ -19,7 +19,7 @@ def diagnose(rbg_img, mask, spot_area):
     logger.debug("counting orange spots")
     orange_spots_count = count_orange_spots(img, spot_area)
     logger.debug(f"got {orange_spots_count} orange spots")
-    return [
+    return {
         "yellow": {
             "presence": bool(yellow_spots_count),
             "count": yellow_spots_count
@@ -32,7 +32,7 @@ def diagnose(rbg_img, mask, spot_area):
             "presence": bool(orange_spots_count),
             "count": orange_spots_count
         }
-    ]
+    }
 
 def count_yellow_spots(img, spot_area):
     masked_img = cv2.inRange(img, np.array([21, 100, 100]), np.array([32, 255, 255]))
