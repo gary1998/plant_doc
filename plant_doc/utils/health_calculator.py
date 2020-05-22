@@ -6,7 +6,7 @@ from plant_doc.utils import color_reporter
 logging.basicConfig(level=logging.NOTSET)
 logger = logging.getLogger("health_calculator")
 
-def calculate(rgb_img, mask):
+def calculate(rgb_img, mask, health_point):
     analysis_image = pcv.analyze_color(rgb_img, mask, 'hsv')
     logger.debug("image analyzed by PlantCV")
     all_colors = pcv.outputs.observations['hue_frequencies']['value']
@@ -16,7 +16,7 @@ def calculate(rgb_img, mask):
     median_color = pcv.outputs.observations['hue_median']['value']
     logger.debug("median color of image calculated")
     logger.info(f'median color: {median_color}')
-    health_score = round(1-(abs(median_color-120)/120), 2)
+    health_score = round(1-(abs(median_color-health_point)/health_point), 2)
     logger.debug("health score of image calculated")
     logger.info(f'health score: {health_score}')
     return {
