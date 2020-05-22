@@ -18,8 +18,9 @@ def analyze():
     mask_gray_high = args.get("mask_gray_high", default=255)
     health_point = args.get("healh_point", default=120)
     spot_area = args.get("spot_area", default=50)
+    spot_count = args.get("spot_count", default=100)
     raw = args.get("raw", default=False)
-    report = plant_doctor.generate_report(url=url, size=size, mask_gray_low=mask_gray_low, mask_gray_high=mask_gray_high, health_point=health_point, spot_area=spot_area, raw=raw)
+    report = plant_doctor.generate_report(url=url, size=size, mask_gray_low=mask_gray_low, mask_gray_high=mask_gray_high, health_point=health_point, spot_area=spot_area, spot_count=spot_count, raw=raw)
     return jsonify(report=report)
     
 if __name__ == "__main__":

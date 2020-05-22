@@ -1,4 +1,4 @@
-def diagnose(report, raw):
+def diagnose(report, raw, spot_count):
     sorted_leaf_overall_color_contributions = sorted(report["leaf_overall_analysis_report"]["color_report"], key=lambda i: i["value"], reverse=True)
     top_five_overall_colors = sorted_leaf_overall_color_contributions[0: 5]
     
@@ -28,8 +28,8 @@ def diagnose(report, raw):
     phosphorous_deficiency = bool(purple_overall_rank or red_overall_rank)
     nitrogen_deficiency = bool((yellow_overall_rank or yellow_green_overall_rank) and not necrosis)
     molybdenum_deficiency = bool((yellow_overall_rank or yellow_green_overall_rank) and necrosis)
-    magnesium_deficiency = bool(interveinal_chlorosis and red_spots_count>100)
-    potassium_deficiency = bool((not interveinal_chlorosis) and chlorosis and brown_spots_count>100)
+    magnesium_deficiency = bool(interveinal_chlorosis and red_spots_count>spot_count)
+    potassium_deficiency = bool((not interveinal_chlorosis) and chlorosis and brown_spots_count>spot_count)
     chloride_deficiency = bool((not interveinal_chlorosis) and chlorosis and necrosis)
     raw_report = report if raw else None
 

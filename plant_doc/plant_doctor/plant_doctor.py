@@ -5,7 +5,7 @@ from plant_doc.utils import health_calculator, leaf_image, image_downloader, cac
 from plant_doc.disease_estimator import disease_estimator
 
 
-def generate_report(url, size, mask_gray_low, mask_gray_high, health_point, spot_area, raw):
+def generate_report(url, size, mask_gray_low, mask_gray_high, health_point, spot_area, spot_count, raw):
     if(url):
         path = image_downloader.download_and_save(url)
         rgb_img = cv2.imread(path)
@@ -24,7 +24,7 @@ def generate_report(url, size, mask_gray_low, mask_gray_high, health_point, spot
         leaf_branch_health = health_calculator.calculate(rgb_img, leaf_branch_points_img, health_point)
 
         # Leaf Spots Analysis Report
-        leaf_spots_report = leaf_spots.diagnose(rgb_img, mask, spot_area)
+        leaf_spots_report = leaf_spots.diagnose(rgb_img, mask, spot_area, spot_count)
 
         cache_remover.clean()
 
