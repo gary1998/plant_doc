@@ -48,7 +48,7 @@ def diagnose(report, raw, spot_count):
         (not interveinal_chlorosis) and chlorosis and necrosis)
 
     diagnosed_report = {
-        "dt": datetime.datetime.now().timestamp()*1000
+        "dt": datetime.datetime.now().timestamp()*1000,
         "diseases": [],
         "deficiencies": [],
     }
