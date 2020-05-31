@@ -1,8 +1,10 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 from plant_doc.plant_doctor import plant_doctor
 import os
 
 app = Flask(__name__)
+CORS(app)
 port = int(os.environ.get("PORT", 5000))
 
 @app.route("/")
