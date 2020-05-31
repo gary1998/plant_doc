@@ -1,3 +1,5 @@
+import datetime
+
 def diagnose(report, raw, spot_count):
     sorted_leaf_overall_color_contributions = sorted(
         report["leaf_overall_analysis_report"]["color_report"], key=lambda i: i["value"], reverse=True)
@@ -46,6 +48,7 @@ def diagnose(report, raw, spot_count):
         (not interveinal_chlorosis) and chlorosis and necrosis)
 
     diagnosed_report = {
+        "dt": datetime.datetime.now().timestamp()*1000
         "diseases": [],
         "deficiencies": [],
     }
