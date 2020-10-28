@@ -23,7 +23,7 @@ def analyze():
     spot_count = int(args.get("spot_count", default=100))
     raw = args.get("raw", default=False)
     report = plant_doctor.generate_report(url=url, size=size, mask_gray_low=mask_gray_low, mask_gray_high=mask_gray_high, health_point=health_point, spot_area=spot_area, spot_count=spot_count, raw=raw)
-    return jsonify(report=report)
+    return jsonify(report=report, url=url)
     
 if __name__ == "__main__":
     app.run(host='0.0.0.0', debug=True, port=port)
